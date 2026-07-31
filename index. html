@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Friendship Day! ✨</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 24px;
+      padding: 30px 20px;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card h1 {
+      color: #ff4757;
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .photo-frame {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 20px auto;
+      border-radius: 50%;
+      border: 5px solid #ff4757;
+      overflow: hidden;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .message {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      padding: 0 10px;
+    }
+
+    .btn {
+      background: #ff4757;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn:active {
+      transform: scale(0.95);
+    }
+
+    .hidden-message {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background: #ffeaa7;
+      border-radius: 12px;
+      color: #d63031;
+      font-weight: 600;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Happy Friendship Day! 💖</h1>
+    <p class="subtitle">To my best friend forever ✨</p>
+
+    <div class="photo-frame">
+      <!-- You can replace this image link with your own photo link later -->
+      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=500" alt="Friends" />
+    </div>
+
+    <p class="message">
+      Thank you for all the laughter, endless chats, and unforgettable memories. You are truly one of a kind! 🌸
+    </p>
+
+    <button class="btn" onclick="revealSecret()">Tap For A Surprise 🎁</button>
+
+    <div class="hidden-message" id="secret">
+      🎉 You're stuck with me forever! Sending you lots of love today and always! 🤗❤️
+    </div>
+  </div>
+
+  <!-- Confetti library for special effect -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  
+  <script>
+    function revealSecret() {
+      const secret = document.getElementById('secret');
+      secret.style.display = 'block';
+
+      // Confetti burst effect
+      confetti({
+        particleCount: 120,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }
+  </script>
+
+</body>
+</html>
